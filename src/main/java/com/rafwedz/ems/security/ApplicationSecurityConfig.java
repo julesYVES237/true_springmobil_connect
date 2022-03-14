@@ -41,21 +41,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
-   @Override
-    protected final void configure(final HttpSecurity http) throws Exception {
-        http
-                .cors()
-                .and()
-                .csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/employees","/employees/{id}","/auth/login","/tasks","/tasks/count","/tasks/tasksdto","/**",
-                        "/tasks/unassigned","/tasks/unassigned/count","/tasks/assigned/count","/tasks/done",
-                        "/tasks/new","/task/assigned","/tasks/{task_id}","/employees/{emp_id}/tasks","/employees/count","/employees/wages","/employees/{emp_id}/tasks/all","/employees/{emp_id}/tasks/done","/employees/{emp_id}/tasks/new").permitAll()
 
-                .anyRequest().authenticated();
-
-
-    }
 
     @Override
     protected final void configure(
@@ -64,14 +50,6 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
 
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        String p = bCryptPasswordEncoder.encode("SomeCoolPassword");
-        System.out.println(bCryptPasswordEncoder.matches("SomeCoolPassword", p));
-        return new BCryptPasswordEncoder();
-
-    }
 
 }
