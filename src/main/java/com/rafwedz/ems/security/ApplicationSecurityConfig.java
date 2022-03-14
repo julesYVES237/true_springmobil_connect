@@ -52,7 +52,9 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/tasks/unassigned","/tasks/unassigned/count","/tasks/assigned/count","/tasks/done",
                         "/tasks/new","/task/assigned","/tasks/{task_id}","/employees/{emp_id}/tasks","/employees/count","/employees/wages","/employees/{emp_id}/tasks/all","/employees/{emp_id}/tasks/done","/employees/{emp_id}/tasks/new").permitAll()
                 .anyRequest().authenticated();
-
+       http.authorizeRequests()
+               .antMatchers("/**")
+               .permitAll();
 
     }
 
@@ -72,4 +74,5 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
 
     }
+
 }

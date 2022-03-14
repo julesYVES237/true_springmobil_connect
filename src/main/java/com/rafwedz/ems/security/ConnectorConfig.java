@@ -36,4 +36,5 @@ public class ConnectorConfig {
         connector.setRedirectPort(8443);
         return connector;
     }
+
 }
