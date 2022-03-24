@@ -50,7 +50,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/employees","/employees/{id}","/auth/login","/tasks","/tasks/count","/tasks/tasksdto","/**",
                         "/tasks/unassigned","/tasks/unassigned/count","/tasks/assigned/count","/tasks/done",
-                        "/tasks/new","/task/assigned","/tasks/{task_id}","/employees/{emp_id}/tasks","/employees/count","/employees/wages","/employees/{emp_id}/tasks/all","/employees/{emp_id}/tasks/done","/employees/{emp_id}/tasks/new").permitAll()
+                        "/taszks/new","/task/assigned","/tasks/{task_id}","/employees/{emp_id}/tasks","/employees/count","/employees/wages","/employees/{emp_id}/tasks/all","/employees/{emp_id}/tasks/done","/employees/{emp_id}/tasks/new").permitAll()
 
                 .anyRequest().authenticated();
 
