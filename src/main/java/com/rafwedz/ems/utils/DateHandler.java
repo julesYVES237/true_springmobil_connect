@@ -25,7 +25,7 @@ public class DateHandler extends StdDeserializer {
         String date = jsonParser.getText();
 
         try {
-            SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             ZoneId defaultZoneId = ZoneId.systemDefault();
             return sdf.parse(date).toInstant().atZone(defaultZoneId).toLocalDate();
 
